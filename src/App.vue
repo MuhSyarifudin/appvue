@@ -1,5 +1,6 @@
 <template>
-<div id="app">
+<div class="container">
+    <h1>Daftar Barang</h1>
     <button class="btn btn-dark btn-tambah" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" @click="show">
         + Barang
     </button>
@@ -38,7 +39,7 @@ export default {
 
 <style>
 .btn-tambah {
-    margin-left: 228px;
+    margin-left: 3px;
     margin-top: 15px;
     margin-bottom: 10px;
 }

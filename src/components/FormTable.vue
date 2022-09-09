@@ -1,5 +1,5 @@
 <template>
-<div class="container col-lg-8 card p-1">
+<div class="card p-2">
     <table class="table table-striped table-bordered">
         <thead>
             <tr class="text-center">
@@ -29,7 +29,7 @@
                             <input name="jumlah" type="number" v-model="value.jumlahBarang" class="form-control-sm" />
                         </div>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <button @click="saveEdit(value)" class="btn btn-sm btn-success">Save</button>
                         <button @click="cancelEdit(value)" class="btn btn-sm btn-danger">Cancel</button>
                     </td>

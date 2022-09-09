@@ -1,6 +1,9 @@
 <template>
-<div class="container col-lg-8 mt-2 card p-3">
+<div class="card p-4 mt-2 mb-4">
     <h2>Tambah Barang</h2>
+    <div class="alert alert-danger m-0 py-2 hidden">
+        Maaf ID yang anda masukan sudah ada!<img class="float-end m-0" @click="close" width="30" height="30" id="x" src="../../src/assets/close.png">
+    </div>
     <form @submit.prevent="submit">
         <div class="form-group">
             <label for="name" class="float-start">ID Barang</label>
@@ -37,25 +40,46 @@ export default {
                 warnaBarang: "",
                 jumlahBarang: ""
             },
-            a: localStorage.getItem("barang") === "" ? [] : JSON.parse(localStorage.getItem("barang"))
+            a: localStorage.getItem("barang") === "" ? [] : JSON.parse(localStorage.getItem("barang")),
+            idbarang: []
         }
     },
     methods: {
         submit() {
-            this.a.push(this.barang);
-            localStorage.setItem("barang", JSON.stringify(this.a));
-            this.barang = {
-                id:"",
-                namaBarang:"",
-                warnaBarang:"",
-                jumlahBarang:""
+            function isEmpty(val) {
+                return (val === undefined || val == null || val.length <= 0) ? true : false;
             }
-            location.reload()
+
+            this.idbarang = this.a.filter((an) => {
+                return an.id === this.barang.id;
+            })
+
+            if (isEmpty(this.idbarang) == false) {
+                let errmsg = document.querySelector(".alert");
+                errmsg.classList.remove("hidden")
+            }
+            if (isEmpty(this.idbarang) == true) {
+                this.a.push(this.barang);
+                localStorage.setItem("barang", JSON.stringify(this.a));
+                this.barang = {
+                    id: "",
+                    namaBarang: "",
+                    warnaBarang: "",
+                    jumlahBarang: ""
+                }
+                location.reload()
+                
+            }
         },
         hide() {
             let modal = document.querySelector("#collapseExample");
             modal.classList.add("collapse");
+        },
+        close(){
+            let errmsg = document.querySelector(".alert");
+            errmsg.classList.add("hidden")
         }
+
     },
 }
 </script>
@@ -67,6 +91,15 @@ export default {
 }
 
 .form-group {
-    margin-top: 10px
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+}
+#x{
+    cursor: pointer;
+}
+.alert{
+    border-left: 5px solid red;
 }
 </style>
