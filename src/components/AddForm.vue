@@ -41,7 +41,7 @@ export default {
                 jumlahBarang: ""
             },
             a: localStorage.getItem("barang") === "" ? [] : JSON.parse(localStorage.getItem("barang")),
-            idbarang: []
+            idbarang: [],
         }
     },
     methods: {
@@ -68,7 +68,6 @@ export default {
                     jumlahBarang: ""
                 }
                 location.reload()
-                
             }
         },
         hide() {
@@ -101,5 +100,8 @@ export default {
 }
 .alert{
     border-left: 5px solid red;
+}
+.footer {
+
 }
 </style>

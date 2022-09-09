@@ -1,5 +1,8 @@
 <template>
 <div class="container">
+    <!--<div class="alert alert-success">
+    Berhasil menambahkan {{ item.namaBarang }}!
+    </div>-->
     <h1>Daftar Barang</h1>
     <button class="btn btn-dark btn-tambah" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" @click="show">
         + Barang
