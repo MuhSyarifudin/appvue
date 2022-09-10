@@ -40,7 +40,7 @@
                 </template>
                 <template v-else>
                     <td class="text-center">{{ index + 1 }}.</td>
-                    <td class="text-center">{{ value.id }}</td>
+                    <td class="text-center">{{ "B"+value.id }}</td>
                     <td class="text-center text-capitalize text-wrap">{{ value.namaBarang }}</td>
                     <td class="text-center text-capitalize">{{ value.warnaBarang }}</td>
                     <td class="text-center">{{ value.jumlahBarang }}</td>
