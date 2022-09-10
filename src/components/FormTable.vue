@@ -16,7 +16,7 @@
                 <template v-if="idBarang === value.id">
                     <td class="font-weight-bold">{{ index + 1 }}.</td>
                     <td>
-                        {{ value.id }}
+                        {{ "B"+value.id }}
                     </td>
                     <td>
                         <div>
