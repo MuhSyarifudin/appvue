@@ -41,13 +41,13 @@ export default {
                 jumlahBarang: ""
             },
             a: localStorage.getItem("barang") === "" ? [] : JSON.parse(localStorage.getItem("barang")),
-            idbarang: [],
+            idbarang: []
         }
     },
     methods: {
         submit() {
             function isEmpty(val) {
-                return (val === undefined || val == null || val.length <= 0) ? true : false;
+                return (val.length <= 0) ? true : false;
             }
 
             this.idbarang = this.a.filter((an) => {
@@ -73,8 +73,14 @@ export default {
         hide() {
             let modal = document.querySelector("#collapseExample");
             modal.classList.add("collapse");
+            this.barang = {
+                id: "",
+                namaBarang: "",
+                warnaBarang: "",
+                jumlahBarang: ""
+            }
         },
-        close(){
+        close() {
             let errmsg = document.querySelector(".alert");
             errmsg.classList.add("hidden")
         }
@@ -92,16 +98,18 @@ export default {
 .form-group {
     margin-top: 10px;
 }
+
 .hidden {
     display: none;
 }
-#x{
+
+#x {
     cursor: pointer;
 }
-.alert{
+
+.alert {
     border-left: 5px solid red;
 }
-.footer {
 
-}
+.footer {}
 </style>

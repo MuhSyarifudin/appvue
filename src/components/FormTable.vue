@@ -2,7 +2,8 @@
 <div class="card p-2">
     <table class="table table-striped table-bordered">
         <thead>
-            <tr class="text-center">
+            <tr class="text-center table-dark">
+                <th>No.</th>
                 <th>ID</th>
                 <th>Nama Barang</th>
                 <th>Warna Barang</th>
@@ -11,9 +12,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for=" value in a " :key="value.id">
+            <tr v-for=" ( value , index ) in a " :key="value">
                 <template v-if="idBarang === value.id">
-                    <td>{{ value.id }}</td>
+                    <td class="font-weight-bold">{{ index + 1 }}.</td>
+                    <td>
+                        {{ value.id }}
+                    </td>
                     <td>
                         <div>
                             <input for="nama" type="text" v-model="value.namaBarang" class="form-control-sm" />
@@ -35,9 +39,10 @@
                     </td>
                 </template>
                 <template v-else>
+                    <td class="text-center">{{ index + 1 }}.</td>
                     <td class="text-center">{{ value.id }}</td>
-                    <td class="text-center text-wrap">{{ value.namaBarang }}</td>
-                    <td class="text-center">{{ value.warnaBarang }}</td>
+                    <td class="text-center text-capitalize text-wrap">{{ value.namaBarang }}</td>
+                    <td class="text-center text-capitalize">{{ value.warnaBarang }}</td>
                     <td class="text-center">{{ value.jumlahBarang }}</td>
                     <td class="text-center">
                         <button class="btn btn-warning btn-sm" @click="editBarang(value)">Edit</button>
