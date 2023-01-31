@@ -1,6 +1,6 @@
 # appvue
 
-<img src="https://i.ibb.co/BndRh20/Screenshot-6.png"/>
+![alt text](https://i.ibb.co/BndRh20/Screenshot-6.png)
 
 ## Project setup
 ```
