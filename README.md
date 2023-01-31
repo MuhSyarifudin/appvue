@@ -1,5 +1,7 @@
 # appvue
 
+<img src="https://i.ibb.co/BndRh20/Screenshot-6.png"/>
+
 ## Project setup
 ```
 yarn install
